@@ -14,18 +14,19 @@
         android:textSize="30sp"
         android:text="단순 계산기"
         />
+
     <EditText
         android:id="@+id/edit_first"
-        android:layout_width="50dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:hint="정수로 입력"
-        />
+        android:hint="정수로 입력" />
+
     <EditText
         android:id="@+id/edit_second"
-        android:layout_width="50dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:hint="정수로 입력"
-        />
+        android:hint="정수로 입력" />
+
     <Button
         android:id="@+id/but_plus"
         android:layout_width="match_parent"
@@ -39,7 +40,7 @@
         android:text="-"
         />
     <Button
-        android:id="@+id/but_multply"
+        android:id="@+id/but_multiply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="x"
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="/"
         />
-    <Button
+    <TextView
         android:id="@+id/text_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
