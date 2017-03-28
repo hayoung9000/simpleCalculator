@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/{
     EditText edit_first;
     EditText edit_second;
     TextView text_result;
@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
         Button but_multiply=(Button)findViewById(R.id.but_multiply);
         Button but_division=(Button)findViewById(R.id.but_division);
         text_result=(TextView)findViewById(R.id.text_result);
+        but_plus.setOnClickListener(butHandler);
+        but_minus.setOnClickListener(butHandler);
+        but_multiply.setOnClickListener(butHandler);
+        but_division.setOnClickListener(butHandler);
 
-        but_plus.setOnClickListener(new View.OnClickListener(){
+
+/*        but_plus.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view){
                 int num1=Integer.parseInt(edit_first.getText().toString());
@@ -31,5 +36,56 @@ public class MainActivity extends AppCompatActivity {
                 text_result.setText(num1+num2+"");
             }
         });
+        */
+
+    } //end oncreat
+
+    View.OnClickListener butHandler=new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int num1=Integer.parseInt(edit_first.getText().toString());
+            int num2=Integer.parseInt(edit_second.getText().toString());
+            int result=0;
+
+            switch (view.getId()){
+                case R.id.but_plus:
+                    result=num1+num2;
+                    break;
+                case R.id.but_minus:
+                    result=num1-num2;
+                    break;
+                case R.id.but_multiply:
+                    result=num1*num2;
+                    break;
+                case R.id.but_division:
+                    result=num1/num2;
+                    break;
+            }
+            text_result.setText(result+"");
+        }
+    };
+/*     @Override
+   public void onClick(View view) {
+        int num1=Integer.parseInt(edit_first.getText().toString());
+        int num2=Integer.parseInt(edit_second.getText().toString());
+        int result=0;
+
+        switch (view.getId()){
+            case R.id.but_plus:
+                result=num1+num2;
+                break;
+            case R.id.but_minus:
+                result=num1-num2;
+                break;
+            case R.id.but_multiply:
+                result=num1*num2;
+                break;
+            case R.id.but_division:
+                result=num1/num2;
+                break;
+        }
+        text_result.setText(result+"");
     }
+    */
 }
+
